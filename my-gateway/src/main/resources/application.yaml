@@ -1,0 +1,17 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: my-gateway
+  config:
+    import: nacos:my-gateway.yaml
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.222.165.148:8848
+        username: nacos
+        password: abc@123
+      config:
+        server-addr: 124.222.165.148:8848
+        username: nacos
+        password: abc@123
