@@ -28,3 +28,4 @@ spring:
             - name: CacheRequestBody
               args:
                 bodyClass: java.lang.String
+            - name: TokenCheck
