@@ -15,3 +15,9 @@ spring:
         server-addr: 124.222.165.148:8848
         username: nacos
         password: abc@123
+    gateway:
+      routes:
+        - id: my-product
+          uri: lb://my-product/product/**
+          predicates:
+            - Path=/product/**
