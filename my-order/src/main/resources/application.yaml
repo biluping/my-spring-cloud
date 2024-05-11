@@ -1,0 +1,17 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: my-product
+  config:
+    import: nacos:my-order.yaml
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 124.222.165.148:8848
+        username: nacos
+        password: abc@123
+      config:
+        server-addr: 124.222.165.148:8848
+        username: nacos
+        password: abc@123
