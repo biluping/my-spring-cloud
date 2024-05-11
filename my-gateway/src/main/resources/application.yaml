@@ -3,6 +3,9 @@ server:
 spring:
   application:
     name: my-gateway
+  data:
+    redis:
+      host: localhost
   config:
     import: nacos:my-gateway.yaml
   cloud:
@@ -21,3 +24,7 @@ spring:
           uri: lb://my-product/product/**
           predicates:
             - Path=/product/**
+          filters:
+            - name: CacheRequestBody
+              args:
+                bodyClass: java.lang.String

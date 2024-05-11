@@ -80,6 +80,20 @@ spring:
 36. SetRequestHostHeader
 37. TokenRelay
 
+以 AddRequestParameter 为例
+```yaml
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: my-product
+          uri: lb://my-product/product/**
+          predicates:
+            - Path=/product/**
+          filters:
+            - AddRequestParameter=name, biluping
+```
+
 
 ## 4 全局过滤器
 > [全局过滤器文档](https://docs.spring.io/spring-cloud-gateway/reference/spring-cloud-gateway/global-filters.html)
