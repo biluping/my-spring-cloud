@@ -25,6 +25,7 @@ public class OrderProducer {
             SendResult sendResult = producer.send(msg);
             System.out.printf("%s%n", sendResult);
         } catch (Exception e) {
+            e.printStackTrace();
             producer.shutdown();
         }
     }

@@ -10,8 +10,8 @@ spring:
       discovery:
         server-addr: 124.222.165.148:8848
         username: nacos
-        password: abc@123
+        password: abc@1234
       config:
         server-addr: 124.222.165.148:8848
         username: nacos
-        password: abc@123
+        password: abc@1234
