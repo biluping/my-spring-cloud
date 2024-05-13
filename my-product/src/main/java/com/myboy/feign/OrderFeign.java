@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Map;
 
-@FeignClient(name = "my-order", path = "/order")
+@FeignClient(name = "my-order", path = "/order", configuration = FeignConfiguration.class, fallback = OrderFeignFallback.class)
 public interface OrderFeign {
 
     @PostMapping("/add")
