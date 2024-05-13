@@ -1,5 +1,7 @@
 package com.myboy.controller;
 
+import com.myboy.service.OrderService;
+import jakarta.annotation.Resource;
 import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
@@ -36,5 +38,15 @@ public class OrderProducer {
     public Map<String, Integer> add(@RequestBody Map<String, Integer> map) {
         map.put("feign", 100);
         return map;
+    }
+
+
+    @Resource
+    private OrderService orderService;
+
+    @GetMapping("/cache")
+    public void cache() {
+        Map<String, Integer> byId = orderService.getById(123L);
+        System.out.println(byId);
     }
 }

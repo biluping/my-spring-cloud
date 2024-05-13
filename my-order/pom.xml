@@ -24,8 +24,6 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-
-
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
@@ -40,6 +38,12 @@
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
             <version>4.9.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alicp.jetcache</groupId>
+            <artifactId>jetcache-starter-redis</artifactId>
+            <version>2.7.5</version>
         </dependency>
 
     </dependencies>
