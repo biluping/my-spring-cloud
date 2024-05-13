@@ -5,9 +5,12 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.csp.sentinel.slots.block.RuleConstant;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
+import com.myboy.feign.OrderFeign;
+import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,5 +45,14 @@ public class ProductController {
 
     public String getByIdFallback(Map<String, String> map, Throwable throwable) {
         return "fallback";
+    }
+
+    @Resource
+    private OrderFeign orderFeign;
+
+    @GetMapping("/feign")
+    public void test() {
+        Map<String, Object> add = orderFeign.add(new HashMap<>());
+        System.out.println(add);
     }
 }

@@ -5,15 +5,14 @@ import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.common.consumer.ConsumeFromWhere;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class OrderConsumer {
 
     @PostConstruct
     public void init() throws Exception {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("order_consumer");
-        consumer.setNamesrvAddr("124.222.165.148:9876");
+        consumer.setNamesrvAddr("127.0.0.1:9876");
         consumer.subscribe("order", "*");
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         consumer.registerMessageListener((MessageListenerConcurrently) (msgs, context) -> {
