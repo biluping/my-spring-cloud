@@ -59,6 +59,25 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.5.5</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.myboy</groupId>
+                <artifactId>sql-engine-boot-starter</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>shardingsphere-jdbc-core-spring-boot-starter</artifactId>
+                <version>5.2.1</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

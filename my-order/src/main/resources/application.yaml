@@ -5,6 +5,11 @@ spring:
     name: my-order
   config:
     import: nacos:my-order.yaml
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://124.222.165.148:3306/order?characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true&rewriteBatchedStatements=true
+    username: root
+    password: abc@1234
   cloud:
     nacos:
       discovery:
@@ -15,6 +20,7 @@ spring:
         server-addr: 127.0.0.1:8848
         username: nacos
         password: abc@1234
+
 
 jetcache:
   statIntervalMinutes: 15
@@ -36,3 +42,6 @@ jetcache:
         maxTotal: 50
       host: 127.0.0.1
       port: 6379
+
+sql:
+  base-package: com.myboy.domain.entity.*

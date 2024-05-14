@@ -10,4 +10,6 @@ public interface OrderService {
     @CacheRefresh(refresh = 5)
     @Cached(name = "order-", expire = 10, key = "'hello-' + #id")
     Map<String, Integer> getById(Long id);
+
+    void addOrder(String orderSn);
 }

@@ -49,4 +49,9 @@ public class OrderProducer {
         Map<String, Integer> byId = orderService.getById(123L);
         System.out.println(byId);
     }
+
+    @GetMapping("/add/{orderSn}")
+    public void add(@PathVariable String orderSn) {
+        orderService.addOrder(orderSn);
+    }
 }
